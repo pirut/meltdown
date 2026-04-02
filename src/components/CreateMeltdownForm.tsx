@@ -59,7 +59,7 @@ export function CreateMeltdownForm() {
                 onClick={() => setChildType(type)}
                 className={`rounded-full px-2.5 py-0.5 text-base font-bold uppercase tracking-wide transition-all ${
                   childType === type
-                    ? "bg-[#E8735A] text-white shadow-sm"
+                    ? "bg-[#FF6B6B] text-white shadow-sm"
                     : "text-muted-foreground hover:bg-accent"
                 }`}
                 style={{ fontFamily: "Fredoka, sans-serif" }}
@@ -78,12 +78,12 @@ export function CreateMeltdownForm() {
           value={story}
           onChange={(e) => setStory(e.target.value)}
           placeholder="...I broke his banana in half and he wanted it 'unbroken.'"
-          className="mt-4 min-h-[120px] resize-none rounded-xl border-border/50 bg-[#F5F0EB] text-[15px] leading-relaxed placeholder:text-muted-foreground/50"
+          className="mt-4 min-h-[120px] resize-none rounded-xl border-border/50 bg-[#FFF8F0] text-[15px] leading-relaxed placeholder:text-muted-foreground/50"
           maxLength={1000}
         />
 
         <div className="mt-2 text-right text-xs text-muted-foreground">
-          <span className={story.length > 900 ? "text-[#E8735A]" : ""}>
+          <span className={story.length > 900 ? "text-[#FF6B6B]" : ""}>
             {story.length}
           </span>
           {" / 1000"}
@@ -117,7 +117,7 @@ export function CreateMeltdownForm() {
       <Button
         type="submit"
         disabled={!story.trim() || !category || isSubmitting}
-        className="w-full rounded-full bg-[#E8735A] py-5 text-base font-semibold text-white hover:bg-[#d4654e] disabled:opacity-50"
+        className="w-full rounded-full bg-[#FF6B6B] py-5 text-base font-semibold text-white hover:bg-[#ff5252] disabled:opacity-50"
         style={{ fontFamily: "Fredoka, sans-serif" }}
       >
         {isSubmitting ? "Posting..." : "Share the Meltdown 😭"}

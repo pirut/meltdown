@@ -65,7 +65,7 @@ export function MeltdownFeed() {
             onClick={() => setSortBy("recent")}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-all duration-200 ${
               sortBy === "recent"
-                ? "bg-[#E8735A] text-white shadow-sm"
+                ? "bg-[#FF6B6B] text-white shadow-sm"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -76,7 +76,7 @@ export function MeltdownFeed() {
             onClick={() => setSortBy("top")}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-all duration-200 ${
               sortBy === "top"
-                ? "bg-[#E8735A] text-white shadow-sm"
+                ? "bg-[#FF6B6B] text-white shadow-sm"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >

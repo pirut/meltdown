@@ -90,7 +90,7 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
     <div className="relative">
       {/* Left fade */}
       <div
-        className={`pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-[#F5F0EB] to-transparent transition-opacity duration-200 ${
+        className={`pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-[#FFF8F0] to-transparent transition-opacity duration-200 ${
           showLeftFade ? "opacity-100" : "opacity-0"
         }`}
       />
@@ -115,7 +115,7 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
           onClick={() => onSelect(null)}
           className={`shrink-0 inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-all ${
             selected === null
-              ? "border-[#E8735A]/40 bg-[#E8735A]/10 text-[#E8735A]"
+              ? "border-[#FF6B6B]/40 bg-[#FF6B6B]/10 text-[#FF6B6B]"
               : "border-transparent bg-muted text-muted-foreground hover:border-border hover:bg-accent"
           }`}
         >
@@ -134,7 +134,7 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
 
       {/* Right fade */}
       <div
-        className={`pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-[#F5F0EB] to-transparent transition-opacity duration-200 ${
+        className={`pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-[#FFF8F0] to-transparent transition-opacity duration-200 ${
           showRightFade ? "opacity-100" : "opacity-0"
         }`}
       />

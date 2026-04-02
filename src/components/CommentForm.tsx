@@ -32,7 +32,7 @@ export function CommentForm({ meltdownId }: CommentFormProps) {
       <div className="rounded-xl border border-dashed border-border bg-muted/30 p-4 text-center">
         <p className="text-sm text-muted-foreground">
           <SignInButton mode="modal">
-            <button type="button" className="font-medium text-[#E8735A] underline-offset-2 hover:underline">
+            <button type="button" className="font-medium text-[#FF6B6B] underline-offset-2 hover:underline">
               Sign in
             </button>
           </SignInButton>
@@ -63,7 +63,7 @@ export function CommentForm({ meltdownId }: CommentFormProps) {
         value={body}
         onChange={(e) => setBody(e.target.value)}
         placeholder={placeholder}
-        className="min-h-[40px] flex-1 resize-none rounded-xl border-border/50 bg-[#F5F0EB] text-sm"
+        className="min-h-[40px] flex-1 resize-none rounded-xl border-border/50 bg-[#FFF8F0] text-sm"
         maxLength={500}
         rows={1}
         onKeyDown={(e) => {
@@ -77,7 +77,7 @@ export function CommentForm({ meltdownId }: CommentFormProps) {
         type="submit"
         disabled={!body.trim() || isSubmitting}
         size="sm"
-        className="shrink-0 rounded-xl bg-[#E8735A] text-white hover:bg-[#d4654e]"
+        className="shrink-0 rounded-xl bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
       >
         Post
       </Button>

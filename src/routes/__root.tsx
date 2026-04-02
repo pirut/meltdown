@@ -31,12 +31,12 @@ export const Route = createRootRoute({
       { property: "og:url", content: "https://meltdown.jrbussard.com" },
       {
         property: "og:title",
-        content: "meltdown - Today my toddler had a meltdown because...",
+        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
       },
       {
         property: "og:description",
         content:
-          "Share and laugh about your kid's funniest tantrums. A community for parents who've been there.",
+          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
       },
       {
         property: "og:image",
@@ -44,18 +44,18 @@ export const Route = createRootRoute({
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "meltdown - Today my toddler had a meltdown because..." },
-      { property: "og:site_name", content: "meltdown" },
+      { property: "og:image:alt", content: "Meltdown - Today my toddler had a meltdown because..." },
+      { property: "og:site_name", content: "Meltdown" },
       // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "meltdown - Today my toddler had a meltdown because...",
+        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
       },
       {
         name: "twitter:description",
         content:
-          "Share and laugh about your kid's funniest tantrums. A community for parents who've been there.",
+          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
       },
       {
         name: "twitter:image",
@@ -98,7 +98,7 @@ function RootComponent() {
       <ConvexProviderWithClerk client={convexClient} useAuth={useAuth}>
         <QueryClientProvider client={queryClient}>
           <StoreUserProvider>
-            <div className="min-h-screen bg-[#F5F0EB]">
+            <div className="min-h-screen bg-[#FFF8F0]">
               <Navbar />
               <main className="mx-auto max-w-2xl px-4 py-6 animate-in fade-in duration-300">
                 <Outlet />

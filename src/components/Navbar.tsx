@@ -11,15 +11,17 @@ export function Navbar() {
   const { isSignedIn, isLoaded } = useAuth();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#E8735A]/15 bg-white backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-orange-200/60 bg-white backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1.5">
           <span
-            className="text-xl font-bold tracking-tight text-[#2D3436]"
+            className="text-xl font-bold tracking-tight text-[#FF6B6B]"
             style={{ fontFamily: "Fredoka, sans-serif" }}
           >
-            meltdown
+            MELTD
+            <span className="inline-block -rotate-12">😭</span>
+            WN
           </span>
         </Link>
 
@@ -34,9 +36,9 @@ export function Navbar() {
               <Button
                 asChild
                 size="sm"
-                className="rounded-full bg-[#E8735A] text-white hover:bg-[#d4654e]"
+                className="rounded-full bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
               >
-                <Link to="/create">Post a Meltdown 🫠</Link>
+                <Link to="/create">Post a Meltdown 😭</Link>
               </Button>
               <UserButton />
             </>
@@ -50,7 +52,7 @@ export function Navbar() {
               <SignUpButton mode="modal">
                 <Button
                   size="sm"
-                  className="rounded-full bg-[#E8735A] text-white hover:bg-[#d4654e]"
+                  className="rounded-full bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
                 >
                   Sign Up
                 </Button>
