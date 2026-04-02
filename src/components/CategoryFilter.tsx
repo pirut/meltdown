@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { CATEGORIES, type CategoryKey } from "@/lib/categories";
 import { CategoryBadge } from "./CategoryBadge";
 
@@ -12,12 +12,18 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
   const [showRightFade, setShowRightFade] = useState(false);
   const [showLeftFade, setShowLeftFade] = useState(false);
 
-  const updateFades = () => {
+  // Drag-to-scroll state
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftStart = useRef(0);
+  const hasDragged = useRef(false);
+
+  const updateFades = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
     setShowLeftFade(el.scrollLeft > 4);
     setShowRightFade(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
-  };
+  }, []);
 
   useEffect(() => {
     updateFades();
@@ -34,7 +40,51 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
     }, 800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [updateFades]);
+
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    isDragging.current = true;
+    hasDragged.current = false;
+    startX.current = e.pageX - el.offsetLeft;
+    scrollLeftStart.current = el.scrollLeft;
+    el.style.cursor = "grabbing";
+    el.style.userSelect = "none";
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    e.preventDefault();
+    const x = e.pageX - el.offsetLeft;
+    const walk = x - startX.current;
+    if (Math.abs(walk) > 3) hasDragged.current = true;
+    el.scrollLeft = scrollLeftStart.current - walk;
+  };
+
+  const handleMouseUp = () => {
+    const el = scrollRef.current;
+    if (el) {
+      el.style.cursor = "grab";
+      el.style.userSelect = "";
+    }
+    isDragging.current = false;
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging.current) handleMouseUp();
+  };
+
+  // Prevent click from firing after a drag
+  const handleClickCapture = (e: React.MouseEvent) => {
+    if (hasDragged.current) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
 
   return (
     <div className="relative">
@@ -45,11 +95,16 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
         }`}
       />
 
-      {/* Scrollable row */}
+      {/* Scrollable + draggable row */}
       <div
         ref={scrollRef}
         onScroll={updateFades}
-        className="flex gap-2 overflow-x-auto pb-1 scrollbar-none"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        onClickCapture={handleClickCapture}
+        className="flex cursor-grab gap-2 overflow-x-auto pb-1 scrollbar-none active:cursor-grabbing"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
