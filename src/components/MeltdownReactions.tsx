@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMutation, useQuery } from "convex/react";
-import { useConvexAuth } from "convex/react";
 import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
@@ -18,16 +17,15 @@ export function MeltdownReactions({
   reactionCounts,
 }: MeltdownReactionsProps) {
   const { isSignedIn } = useAuth();
-  const { isAuthenticated } = useConvexAuth();
   const toggle = useMutation(api.reactions.toggle);
   const userReactions = useQuery(
     api.reactions.getUserReactions,
-    isAuthenticated ? { meltdownId } : "skip"
+    isSignedIn ? { meltdownId } : "skip"
   );
   const [animating, setAnimating] = useState<string | null>(null);
 
   const handleReaction = async (type: "been_there" | "laughing") => {
-    if (!isAuthenticated) return;
+    if (!isSignedIn) return;
 
     setAnimating(type);
     setTimeout(() => setAnimating(null), 400);
