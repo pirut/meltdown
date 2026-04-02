@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MeltdownFeed } from "@/components/MeltdownFeed";
+import TextLoop from "@/components/text-loop";
 
 export const Route = createFileRoute("/")({ component: HomePage });
 
@@ -7,14 +8,22 @@ function HomePage() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="text-center">
+      <div className="flex flex-col items-center text-center">
         <h1
           className="text-3xl font-bold tracking-tight text-[#2D3436] sm:text-4xl"
           style={{ fontFamily: "Fredoka, sans-serif" }}
         >
-          Today my{" "}
-          <span className="text-[#FF6B6B]">toddler</span>{" "}
-          had a meltdown because...
+          <TextLoop
+            staticText="Today my"
+            rotatingTexts={["toddler", "baby", "kid"]}
+            interval={2500}
+            className="inline-flex justify-center text-3xl sm:text-4xl font-bold tracking-tight"
+            staticTextClassName="mr-2 text-[#2D3436]"
+            rotatingTextClassName="bg-gradient-to-r from-[#FF6B6B] to-[#ff5252] pr-1"
+            backgroundClassName="bg-gradient-to-r from-transparent via-[#FF6B6B]/10 to-[#FF6B6B]/20"
+            cursorClassName="bg-[#FF6B6B]"
+          />
+          <span className="mt-1 block">had a meltdown because...</span>
         </h1>
         <p className="mt-2 text-muted-foreground">
           The funniest parenting moments, shared with solidarity.
