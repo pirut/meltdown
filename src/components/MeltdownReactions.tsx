@@ -6,6 +6,7 @@ import type { Id } from "../../convex/_generated/dataModel";
 import { REACTIONS } from "@/lib/reactions";
 import { cn } from "@/lib/utils";
 import { SignInButton } from "@clerk/tanstack-react-start";
+import { toast } from "sonner";
 
 interface MeltdownReactionsProps {
   meltdownId: Id<"meltdowns">;
@@ -34,6 +35,9 @@ export function MeltdownReactions({
       await toggle({ meltdownId, type });
     } catch (err) {
       console.error("Failed to toggle reaction:", err);
+      toast.error("Couldn't react", {
+        description: err instanceof Error ? err.message : "Try again in a moment",
+      });
     }
   };
 
