@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/Navbar";
 import { StoreUserProvider } from "@/components/StoreUserProvider";
 import { convexClient, queryClient } from "@/router";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 
@@ -77,6 +78,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="min-h-screen bg-[#FFF8F0] font-sans text-[#2D3436] antialiased">
         {children}
+        <Analytics />
         <Scripts />
       </body>
     </html>
