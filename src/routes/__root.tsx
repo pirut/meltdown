@@ -31,12 +31,12 @@ export const Route = createRootRoute({
       { property: "og:url", content: "https://meltdown.jrbussard.com" },
       {
         property: "og:title",
-        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
+        content: "meltdown - Today my toddler had a meltdown because...",
       },
       {
         property: "og:description",
         content:
-          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
+          "Share and laugh about your kid's funniest tantrums. A community for parents who've been there.",
       },
       {
         property: "og:image",
@@ -44,18 +44,18 @@ export const Route = createRootRoute({
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Meltdown - Today my toddler had a meltdown because..." },
-      { property: "og:site_name", content: "Meltdown" },
+      { property: "og:image:alt", content: "meltdown - Today my toddler had a meltdown because..." },
+      { property: "og:site_name", content: "meltdown" },
       // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
+        content: "meltdown - Today my toddler had a meltdown because...",
       },
       {
         name: "twitter:description",
         content:
-          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
+          "Share and laugh about your kid's funniest tantrums. A community for parents who've been there.",
       },
       {
         name: "twitter:image",
