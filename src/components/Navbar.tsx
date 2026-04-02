@@ -3,11 +3,13 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
+  useAuth,
 } from "@clerk/tanstack-react-start";
-import { Authenticated, Unauthenticated } from "convex/react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
+  const { isSignedIn, isLoaded } = useAuth();
+
   return (
     <header className="sticky top-0 z-50 border-b border-orange-200/60 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
@@ -25,31 +27,34 @@ export function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Authenticated>
-            <Button
-              asChild
-              size="sm"
-              className="rounded-full bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
-            >
-              <Link to="/create">Post a Meltdown 😭</Link>
-            </Button>
-            <UserButton />
-          </Authenticated>
-          <Unauthenticated>
-            <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
-                Sign In
-              </Button>
-            </SignInButton>
-            <SignUpButton mode="modal">
+          {!isLoaded ? null : isSignedIn ? (
+            <>
               <Button
+                asChild
                 size="sm"
                 className="rounded-full bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
               >
-                Sign Up
+                <Link to="/create">Post a Meltdown 😭</Link>
               </Button>
-            </SignUpButton>
-          </Unauthenticated>
+              <UserButton />
+            </>
+          ) : (
+            <>
+              <SignInButton mode="modal">
+                <Button variant="ghost" size="sm">
+                  Sign In
+                </Button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <Button
+                  size="sm"
+                  className="rounded-full bg-[#FF6B6B] text-white hover:bg-[#ff5252]"
+                >
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </>
+          )}
         </div>
       </div>
     </header>

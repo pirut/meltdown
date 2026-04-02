@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "convex/react";
-import { useConvexAuth } from "convex/react";
+import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -44,10 +44,10 @@ export function CommentItem({
   body,
   creationTime,
 }: CommentItemProps) {
-  const { isAuthenticated } = useConvexAuth();
+  const { isSignedIn } = useAuth();
   const currentUser = useQuery(
     api.users.current,
-    isAuthenticated ? {} : "skip"
+    isSignedIn ? {} : "skip"
   );
   const removeComment = useMutation(api.comments.remove);
 

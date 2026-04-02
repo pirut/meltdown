@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
-import { useConvexAuth } from "convex/react";
+import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ interface CommentFormProps {
 }
 
 export function CommentForm({ meltdownId }: CommentFormProps) {
-  const { isAuthenticated } = useConvexAuth();
+  const { isSignedIn } = useAuth();
   const [body, setBody] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const createComment = useMutation(api.comments.create);
@@ -27,7 +27,7 @@ export function CommentForm({ meltdownId }: CommentFormProps) {
   const placeholder =
     PLACEHOLDERS[Math.floor(Math.random() * PLACEHOLDERS.length)];
 
-  if (!isAuthenticated) {
+  if (!isSignedIn) {
     return (
       <div className="rounded-xl border border-dashed border-border bg-muted/30 p-4 text-center">
         <p className="text-sm text-muted-foreground">

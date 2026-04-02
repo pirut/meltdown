@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { useConvexAuth } from "convex/react";
+import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
 import { REACTIONS } from "@/lib/reactions";
@@ -16,6 +17,7 @@ export function MeltdownReactions({
   meltdownId,
   reactionCounts,
 }: MeltdownReactionsProps) {
+  const { isSignedIn } = useAuth();
   const { isAuthenticated } = useConvexAuth();
   const toggle = useMutation(api.reactions.toggle);
   const userReactions = useQuery(
@@ -44,7 +46,7 @@ export function MeltdownReactions({
         const count = reactionCounts[reaction.key];
         const isAnimating = animating === reaction.key;
 
-        if (!isAuthenticated) {
+        if (!isSignedIn) {
           return (
             <SignInButton key={reaction.key} mode="modal">
               <button

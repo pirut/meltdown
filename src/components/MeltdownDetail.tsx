@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "convex/react";
-import { useConvexAuth } from "convex/react";
+import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -41,10 +41,10 @@ function getInitials(name: string): string {
 
 export function MeltdownDetail({ id }: MeltdownDetailProps) {
   const meltdown = useQuery(api.meltdowns.get, { id });
-  const { isAuthenticated } = useConvexAuth();
+  const { isSignedIn } = useAuth();
   const currentUser = useQuery(
     api.users.current,
-    isAuthenticated ? {} : "skip"
+    isSignedIn ? {} : "skip"
   );
   const removeMeltdown = useMutation(api.meltdowns.remove);
   const navigate = useNavigate();
