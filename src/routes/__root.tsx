@@ -79,11 +79,11 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: "#ffffff" }}>
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-screen bg-[#FFF8F0] font-sans text-[#2D3436] antialiased">
+      <body className="min-h-screen font-sans text-[#2D3436] antialiased" style={{ backgroundColor: "#ffffff" }}>
         {children}
         <Analytics />
         <Scripts />
@@ -98,7 +98,7 @@ function RootComponent() {
       <ConvexProviderWithClerk client={convexClient} useAuth={useAuth}>
         <QueryClientProvider client={queryClient}>
           <StoreUserProvider>
-            <div className="min-h-screen">
+            <div className="min-h-screen bg-[#FFF8F0]">
               <Navbar />
               <main className="mx-auto max-w-2xl px-4 py-6 animate-in fade-in duration-300">
                 <Outlet />
