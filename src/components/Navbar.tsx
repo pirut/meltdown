@@ -15,7 +15,6 @@ export function Navbar() {
       <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1.5">
-          <img src="/icon-192.png" alt="" className="h-8 w-8 rounded-lg" />
           <span
             className="text-xl font-bold tracking-tight text-[#2D3436]"
             style={{ fontFamily: "Fredoka, sans-serif" }}
