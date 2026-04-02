@@ -17,9 +17,9 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
-      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { name: "apple-mobile-web-app-title", content: "Meltdown" },
-      { name: "theme-color", content: "#FF6B6B" },
+      { name: "theme-color", content: "#ffffff" },
       { title: "Meltdown - Share Your Toddler's Funniest Meltdowns" },
       {
         name: "description",

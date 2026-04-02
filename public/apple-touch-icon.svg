@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF6B6B"/>
-      <stop offset="100%" style="stop-color:#ff5252"/>
+      <stop offset="0%" style="stop-color:#FFF8F0"/>
+      <stop offset="100%" style="stop-color:#FFE0E0"/>
     </linearGradient>
   </defs>
-  <rect width="180" height="180" rx="36" fill="url(#bg)"/>
-  <text x="90" y="118" text-anchor="middle" font-size="110">😭</text>
+  <rect width="180" height="180" rx="40" fill="url(#bg)"/>
+  <text x="90" y="78" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="28" fill="#FF6B6B" letter-spacing="-0.5">MELTD</text>
+  <text x="90" y="114" text-anchor="middle" font-size="38">😭</text>
+  <text x="90" y="150" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="28" fill="#FF6B6B" letter-spacing="-0.5">WN</text>
 </svg>
