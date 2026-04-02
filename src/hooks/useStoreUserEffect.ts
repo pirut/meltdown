@@ -4,27 +4,39 @@ import { useConvexAuth } from "convex/react";
 import { useAuth } from "@clerk/tanstack-react-start";
 import { api } from "../../convex/_generated/api";
 
+function decodeJwtPayload(token: string) {
+  try {
+    const base64 = token.split(".")[1];
+    const json = atob(base64.replace(/-/g, "+").replace(/_/g, "/"));
+    return JSON.parse(json);
+  } catch {
+    return null;
+  }
+}
+
 export function useStoreUserEffect() {
   const { isSignedIn, getToken } = useAuth();
   const { isAuthenticated } = useConvexAuth();
   const storeUser = useMutation(api.users.store);
   const hasStored = useRef(false);
 
-  // Debug: log auth state so we can diagnose the token issue
+  // Debug: decode the JWT to see issuer and audience
   useEffect(() => {
     if (!isSignedIn) return;
     getToken({ template: "convex" }).then((token) => {
+      const payload = token ? decodeJwtPayload(token) : null;
       console.log("[Meltdown Auth Debug]", {
         clerkSignedIn: isSignedIn,
         convexAuthenticated: isAuthenticated,
         hasConvexToken: !!token,
-        tokenPreview: token ? token.substring(0, 40) + "..." : "NULL",
+        jwtIssuer: payload?.iss ?? "N/A",
+        jwtAudience: payload?.aud ?? "N/A",
+        jwtSubject: payload?.sub ?? "N/A",
       });
     });
   }, [isSignedIn, isAuthenticated, getToken]);
 
   useEffect(() => {
-    // Wait for Convex to actually be authenticated before storing the user
     if (!isAuthenticated) {
       hasStored.current = false;
       return;
