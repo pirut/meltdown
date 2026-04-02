@@ -14,7 +14,7 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
@@ -99,8 +99,6 @@ function RootComponent() {
         <QueryClientProvider client={queryClient}>
           <StoreUserProvider>
             <div className="min-h-screen">
-              {/* White fill behind the mobile status bar so there's no color mismatch */}
-              <div className="fixed inset-x-0 top-0 z-[60] h-[env(safe-area-inset-top)] bg-white" />
               <Navbar />
               <main className="mx-auto max-w-2xl px-4 py-6 animate-in fade-in duration-300">
                 <Outlet />

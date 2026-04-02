@@ -11,7 +11,7 @@ export function Navbar() {
   const { isSignedIn, isLoaded } = useAuth();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-orange-200/60 bg-white backdrop-blur-md pt-[env(safe-area-inset-top)]">
+    <header className="sticky top-0 z-50 border-b border-orange-200/60 bg-white backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1.5">
