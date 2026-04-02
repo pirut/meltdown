@@ -29,7 +29,7 @@ export function CommentList({ meltdownId, commentCount }: CommentListProps) {
       </div>
 
       {comments === undefined ? (
-        <div className="p-4 text-center text-sm text-muted-foreground">
+        <div className="p-4 text-center text-sm text-muted-foreground opacity-60">
           Loading comments...
         </div>
       ) : comments.length === 0 ? (
@@ -39,7 +39,7 @@ export function CommentList({ meltdownId, commentCount }: CommentListProps) {
           </p>
         </div>
       ) : (
-        <div className="px-4 pb-2">
+        <div className="animate-in px-4 pb-2">
           <Separator className="my-2" />
           {comments.map((comment) => (
             <CommentItem

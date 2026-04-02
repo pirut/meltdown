@@ -98,7 +98,7 @@ export function MeltdownDetail({ id }: MeltdownDetailProps) {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="animate-in space-y-4">
       <Card className="overflow-hidden rounded-2xl border-border/50 bg-white shadow-sm">
         <CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0">
           <div className="flex items-center gap-3">

@@ -56,7 +56,7 @@ function RootComponent() {
           <StoreUserProvider>
             <div className="min-h-screen">
               <Navbar />
-              <main className="mx-auto max-w-2xl px-4 py-6">
+              <main className="mx-auto max-w-2xl px-4 py-6 animate-in fade-in duration-300">
                 <Outlet />
               </main>
             </div>

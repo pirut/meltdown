@@ -25,9 +25,13 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Right side */}
-        <div className="flex items-center gap-2">
-          {!isLoaded ? null : isSignedIn ? (
+        {/* Right side — fade in once Clerk loads */}
+        <div
+          className={`flex items-center gap-2 transition-opacity duration-300 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {isSignedIn ? (
             <>
               <Button
                 asChild

@@ -58,7 +58,7 @@ export function MeltdownCard({
   const cat = getCategoryByKey(category as any);
 
   return (
-    <Card className="overflow-hidden rounded-2xl border-border/50 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <Card className="animate-fade-in-up overflow-hidden rounded-2xl border-border/50 bg-white shadow-sm transition-shadow hover:shadow-md">
       <CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0 pb-2">
         <div className="flex items-center gap-2.5">
           <Avatar className="h-8 w-8">
