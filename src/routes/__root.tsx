@@ -18,7 +18,42 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "A community for parents to share and laugh about their toddler's most hilarious meltdowns.",
+          "A community for parents to share and laugh about their toddler's most hilarious meltdowns. Today my toddler had a meltdown because...",
+      },
+      // OpenGraph
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://meltdown.jrbussard.com" },
+      {
+        property: "og:title",
+        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
+      },
+      {
+        property: "og:description",
+        content:
+          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
+      },
+      {
+        property: "og:image",
+        content: "https://meltdown.jrbussard.com/og-image.png",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Meltdown - Today my toddler had a meltdown because..." },
+      { property: "og:site_name", content: "Meltdown" },
+      // Twitter Card
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Meltdown - Today My Toddler Had a Meltdown Because...",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Share & laugh about your kid's funniest tantrums. A community for parents who've been there. 😭🤣",
+      },
+      {
+        name: "twitter:image",
+        content: "https://meltdown.jrbussard.com/og-image.png",
       },
     ],
     links: [
