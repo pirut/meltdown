@@ -63,8 +63,8 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.svg" },
+      { rel: "icon", type: "image/png", href: "/icon-192.png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/manifest.json" },
       { rel: "stylesheet", href: appCss },
       {
@@ -98,7 +98,7 @@ function RootComponent() {
       <ConvexProviderWithClerk client={convexClient} useAuth={useAuth}>
         <QueryClientProvider client={queryClient}>
           <StoreUserProvider>
-            <div className="min-h-screen bg-[#FFF8F0]">
+            <div className="min-h-screen bg-[#F5F0EB]">
               <Navbar />
               <main className="mx-auto max-w-2xl px-4 py-6 animate-in fade-in duration-300">
                 <Outlet />

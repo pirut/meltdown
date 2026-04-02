@@ -74,7 +74,7 @@ export function MeltdownCard({
         <div className="flex items-center gap-2.5">
           <Avatar className="h-8 w-8">
             <AvatarImage src={authorAvatarUrl} alt={authorName} />
-            <AvatarFallback className="bg-[#FFE66D] text-xs font-medium text-[#2D3436]">
+            <AvatarFallback className="bg-[#F5C842] text-xs font-medium text-[#2D3436]">
               {getInitials(authorName)}
             </AvatarFallback>
           </Avatar>
@@ -93,7 +93,7 @@ export function MeltdownCard({
         <p className="text-[15px] leading-relaxed">
           <span className="text-muted-foreground">Today my </span>
           <span
-            className="font-bold uppercase tracking-wide text-[#FF6B6B]"
+            className="font-bold uppercase tracking-wide text-[#E8735A]"
             style={{ fontFamily: "Fredoka, sans-serif" }}
           >
             {childType}

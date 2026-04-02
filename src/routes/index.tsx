@@ -19,9 +19,9 @@ function HomePage() {
             interval={2500}
             className="inline-flex justify-center text-3xl sm:text-4xl font-bold tracking-tight"
             staticTextClassName="mr-2 text-[#2D3436]"
-            rotatingTextClassName="bg-gradient-to-r from-[#FF6B6B] to-[#ff5252] pr-1"
-            backgroundClassName="bg-gradient-to-r from-transparent via-[#FF6B6B]/10 to-[#FF6B6B]/20"
-            cursorClassName="bg-[#FF6B6B]"
+            rotatingTextClassName="bg-gradient-to-r from-[#E8735A] to-[#d4654e] pr-1"
+            backgroundClassName="bg-gradient-to-r from-transparent via-[#E8735A]/10 to-[#E8735A]/20"
+            cursorClassName="bg-[#E8735A]"
           />
           <span className="mt-1 block">had a meltdown because...</span>
         </h1>

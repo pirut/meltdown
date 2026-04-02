@@ -107,7 +107,7 @@ export function MeltdownDetail({ id }: MeltdownDetailProps) {
                 src={meltdown.authorAvatarUrl}
                 alt={meltdown.authorName}
               />
-              <AvatarFallback className="bg-[#FFE66D] font-medium text-[#2D3436]">
+              <AvatarFallback className="bg-[#F5C842] font-medium text-[#2D3436]">
                 {getInitials(meltdown.authorName)}
               </AvatarFallback>
             </Avatar>
@@ -137,7 +137,7 @@ export function MeltdownDetail({ id }: MeltdownDetailProps) {
           <p className="text-lg leading-relaxed">
             <span className="text-muted-foreground">Today my </span>
             <span
-              className="font-bold uppercase tracking-wide text-[#FF6B6B]"
+              className="font-bold uppercase tracking-wide text-[#E8735A]"
               style={{ fontFamily: "Fredoka, sans-serif" }}
             >
               {meltdown.childType}
