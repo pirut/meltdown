@@ -1,72 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF8A80"/>
-      <stop offset="50%" stop-color="#FF6B6B"/>
-      <stop offset="100%" stop-color="#EF5350"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF1F0"/>
+      <stop offset="100%" stop-color="#FFD6D6"/>
     </linearGradient>
-    <linearGradient id="face" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFDF7"/>
-      <stop offset="100%" stop-color="#FFF0E0"/>
-    </linearGradient>
-    <linearGradient id="tear" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#81D4FA"/>
-      <stop offset="100%" stop-color="#4FC3F7"/>
-    </linearGradient>
-    <linearGradient id="melt" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFF0E0"/>
-      <stop offset="100%" stop-color="#FFE0CC"/>
-    </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#C62828" flood-opacity="0.25"/>
-    </filter>
-    <filter id="tearShadow" x="-20%" y="-20%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0277BD" flood-opacity="0.3"/>
-    </filter>
   </defs>
-
-  <!-- Background -->
   <rect width="180" height="180" fill="url(#bg)"/>
-
-  <!-- Melting drips from the face -->
-  <ellipse cx="67" cy="139" rx="6.5" ry="15" fill="url(#melt)" opacity="0.9"/>
-  <ellipse cx="90" cy="146" rx="8.5" ry="19" fill="url(#melt)" opacity="0.9"/>
-  <ellipse cx="113" cy="141" rx="6.5" ry="16" fill="url(#melt)" opacity="0.9"/>
-
-  <!-- Face circle -->
-  <circle cx="90" cy="83" r="45" fill="url(#face)" filter="url(#shadow)"/>
-
-  <!-- Eyes - scrunched crying -->
-  <!-- Left eye -->
-  <path d="M67 75 Q73 67 79 75" stroke="#5D4037" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-  <path d="M67 75 Q73 83 79 75" stroke="#5D4037" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-  <!-- Right eye -->
-  <path d="M101 75 Q107 67 113 75" stroke="#5D4037" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-  <path d="M101 75 Q107 83 113 75" stroke="#5D4037" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-
-  <!-- Eyebrows -->
-  <path d="M63 65 Q73 58 81 64" stroke="#5D4037" stroke-width="2.3" fill="none" stroke-linecap="round"/>
-  <path d="M117 65 Q107 58 99 64" stroke="#5D4037" stroke-width="2.3" fill="none" stroke-linecap="round"/>
-
-  <!-- Open wailing mouth -->
-  <ellipse cx="90" cy="98" rx="15" ry="11" fill="#5D4037"/>
-  <ellipse cx="90" cy="96" rx="11" ry="6.5" fill="#EF5350"/>
-
-  <!-- Blush cheeks -->
-  <circle cx="63" cy="88" r="7.5" fill="#FFAB91" opacity="0.5"/>
-  <circle cx="117" cy="88" r="7.5" fill="#FFAB91" opacity="0.5"/>
-
-  <!-- Tear drops -->
-  <g filter="url(#tearShadow)">
-    <path d="M60 77 Q54 73 51 63 Q50 60 53 61 Q58 65 60 73 Z" fill="url(#tear)" opacity="0.9"/>
-    <circle cx="48" cy="59" r="2.8" fill="url(#tear)" opacity="0.8"/>
-  </g>
-  <g filter="url(#tearShadow)">
-    <path d="M120 77 Q126 73 129 63 Q130 60 127 61 Q122 65 120 73 Z" fill="url(#tear)" opacity="0.9"/>
-    <circle cx="132" cy="59" r="2.8" fill="url(#tear)" opacity="0.8"/>
-  </g>
-
-  <!-- Streaming tears -->
-  <path d="M67 79 Q65 91 63 103" stroke="#81D4FA" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <path d="M113 79 Q115 91 117 103" stroke="#81D4FA" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <text x="90" y="122" text-anchor="middle" font-size="120" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">😭</text>
 </svg>
