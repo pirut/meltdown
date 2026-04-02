@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "MELTD 😭 WN" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]:
+            - text: MELTD
+            - generic [ref=e7]: 😭
+            - text: WN
+        - generic [ref=e8]:
+          - button "Sign In" [ref=e9]
+          - button "Sign Up" [ref=e10]
+    - main [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - heading "Today my toddler had a meltdown because..." [level=1] [ref=e14]:
+            - generic [ref=e15]:
+              - generic [ref=e16]: Today my
+              - generic [ref=e18]: toddler
+            - generic [ref=e21]: had a meltdown because...
+          - paragraph [ref=e22]: The funniest parenting moments, shared with solidarity.
+        - generic [ref=e23]:
+          - generic [ref=e25]:
+            - button "🔥 Freshest" [ref=e26]
+            - button "🏆 Top" [ref=e27]
+          - generic [ref=e31]:
+            - button "All" [ref=e32]
+            - button "🍌 Food" [ref=e33]:
+              - generic [ref=e34]: 🍌
+              - generic [ref=e35]: Food
+            - button "😴 Bedtime" [ref=e36]:
+              - generic [ref=e37]: 😴
+              - generic [ref=e38]: Bedtime
+            - button "👕 Getting Dressed" [ref=e39]:
+              - generic [ref=e40]: 👕
+              - generic [ref=e41]: Getting Dressed
+            - button "🥤 Wrong Cup" [ref=e42]:
+              - generic [ref=e43]: 🥤
+              - generic [ref=e44]: Wrong Cup
+            - button "🧩 Toys" [ref=e45]:
+              - generic [ref=e46]: 🧩
+              - generic [ref=e47]: Toys
+            - button "📺 Screen Time" [ref=e48]:
+              - generic [ref=e49]: 📺
+              - generic [ref=e50]: Screen Time
+            - button "🤷 Literally Nothing" [ref=e51]:
+              - generic [ref=e52]: 🤷
+              - generic [ref=e53]: Literally Nothing
+            - button "✨ Impossible Request" [ref=e54]:
+              - generic [ref=e55]: ✨
+              - generic [ref=e56]: Impossible Request
+  - region "Notifications alt+T"

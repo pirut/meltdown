@@ -1,0 +1,3 @@
+[  290041ms] [LOG] WebSocket closed with code 1006 @ https://meltdown.jrbussard.com/assets/main-B7lwSUbj.js:17
+[  290041ms] [LOG] Attempting reconnect in 736ms @ https://meltdown.jrbussard.com/assets/main-B7lwSUbj.js:17
+[  290970ms] [LOG] WebSocket reconnected at t=290.9s after disconnect due to closed with code 1006 @ https://meltdown.jrbussard.com/assets/main-B7lwSUbj.js:17
