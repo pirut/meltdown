@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MeltdownReactions } from "./MeltdownReactions";
@@ -56,9 +56,20 @@ export function MeltdownCard({
   truncate = true,
 }: MeltdownCardProps) {
   const cat = getCategoryByKey(category as any);
+  const navigate = useNavigate();
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't navigate if clicking on interactive elements (buttons, links inside the card)
+    const target = e.target as HTMLElement;
+    if (target.closest("button, a, [role='button']")) return;
+    navigate({ to: "/meltdown/$id", params: { id } });
+  };
 
   return (
-    <Card className="animate-fade-in-up overflow-hidden rounded-2xl border-border/50 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <Card
+      onClick={handleCardClick}
+      className="animate-fade-in-up cursor-pointer overflow-hidden rounded-2xl border-border/50 bg-white shadow-sm transition-shadow hover:shadow-md"
+    >
       <CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0 pb-2">
         <div className="flex items-center gap-2.5">
           <Avatar className="h-8 w-8">
@@ -79,35 +90,22 @@ export function MeltdownCard({
       </CardHeader>
 
       <CardContent className="pb-3">
-        {/* The meltdown template */}
-        <Link
-          to="/meltdown/$id"
-          params={{ id }}
-          className="group block"
-        >
-          <p className="text-[15px] leading-relaxed">
-            <span className="text-muted-foreground">Today my </span>
-            <span
-              className="font-bold uppercase tracking-wide text-[#FF6B6B]"
-              style={{ fontFamily: "Fredoka, sans-serif" }}
-            >
-              {childType}
-            </span>
-            <span className="text-muted-foreground">
-              {" "}
-              had a meltdown because{" "}
-            </span>
-            <span
-              className={
-                truncate
-                  ? "line-clamp-3 group-hover:text-foreground/80"
-                  : "group-hover:text-foreground/80"
-              }
-            >
-              {story}
-            </span>
-          </p>
-        </Link>
+        <p className="text-[15px] leading-relaxed">
+          <span className="text-muted-foreground">Today my </span>
+          <span
+            className="font-bold uppercase tracking-wide text-[#FF6B6B]"
+            style={{ fontFamily: "Fredoka, sans-serif" }}
+          >
+            {childType}
+          </span>
+          <span className="text-muted-foreground">
+            {" "}
+            had a meltdown because{" "}
+          </span>
+          <span className={truncate ? "line-clamp-3" : ""}>
+            {story}
+          </span>
+        </p>
 
         {/* Category badge */}
         {cat && (
